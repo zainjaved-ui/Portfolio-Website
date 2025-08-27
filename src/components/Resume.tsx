@@ -39,7 +39,7 @@ const Resume = () => {
             asChild
             className="bg-gradient-primary hover:shadow-glow text-primary-foreground px-8 py-6 text-lg font-semibold rounded-lg"
           >
-            <a href="/resume.pdf" download="Your_Name_Resume.pdf">
+            <a href="/resume.pdf" download="resume.pdf">
               <Download className="w-5 h-5 mr-2" />
               Download Resume (PDF)
             </a>
