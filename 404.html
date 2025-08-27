@@ -1,8 +1,38 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="refresh" content="0; url=./index.html" />
+    <meta charset="utf-8" />
+    <title>Redirecting...</title>
+    <script>
+      // Get the current pathname and redirect to it
+      const segment = 1; // Adjust this if your site is hosted at a deeper path
+      const pathname = location.pathname;
+
+      // Split the path into parts
+      const pathParts = pathname.split('/');
+
+      // Check if we're already at the correct path structure
+      if (pathParts[1] === 'Portfolio-Website' && pathParts[2]) {
+        // We're already on a path like /Portfolio-Website/something
+        location.href = location.origin + pathname;
+      } else {
+        // We need to preserve the path and redirect to the SPA
+        let newPath = location.origin + '/Portfolio-Website';
+
+        // Add the pathname if it's not just a slash
+        if (pathname !== '/') {
+          newPath += pathname;
+        }
+
+        // Add the search query and hash if they exist
+        if (location.search) newPath += location.search;
+        if (location.hash) newPath += location.hash;
+
+        location.href = newPath;
+      }
+    </script>
   </head>
-  <body></body>
+  <body>
+    <p>Redirecting...</p>
+  </body>
 </html>
